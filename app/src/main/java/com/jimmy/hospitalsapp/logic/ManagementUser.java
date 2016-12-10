@@ -17,7 +17,7 @@ public class ManagementUser {
     private ArrayList<User> users;
 
     public ManagementUser(Context context) {
-this.context = context;
+        this.context = context;
     }
 
     public void loadUsers() {
