@@ -7,8 +7,8 @@ android {
         applicationId "com.jimmy.hospitalsapp"
         minSdkVersion 16
         targetSdkVersion 25
-        versionCode 1
-        versionName "1.0"
+        versionCode 100
+        versionName "1.0.0"
     }
     buildTypes {
         release {
