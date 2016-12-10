@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">HospitalSAPP</string>
+    <string name="texto">Hola Mundo</string>
+    <string name="vacío"> </string>
+</resources>
