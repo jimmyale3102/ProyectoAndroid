@@ -8,7 +8,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.jimmy.hospitalsapp.LoginActivity">
+    tools:context="com.jimmy.hospitalsapp.activities.LoginActivity">
 
     <EditText
         android:id="@+id/etUserName"
@@ -16,13 +16,6 @@
         android:layout_height="wrap_content"
         android:hint="Nombre de usuario"
         android:inputType="textPersonName" />
-
-    <View
-        android:id="@+id/separator"
-        android:layout_width="match_parent"
-        android:layout_height="1.5dp"
-        android:layout_below="@id/etUserName"
-        android:background="@android:color/background_dark" />
 
     <EditText
         android:id="@+id/etPassword"
@@ -32,13 +25,6 @@
         android:inputType="textPassword"
         android:layout_below="@+id/etUserName"
         android:layout_marginTop="10dp" />
-
-    <View
-        android:id="@+id/separator2"
-        android:layout_width="match_parent"
-        android:layout_height="1.5dp"
-        android:layout_below="@id/etPassword"
-        android:background="@android:color/background_dark" />
 
     <Button
         android:id="@+id/btnLogin"
@@ -56,5 +42,7 @@
         android:layout_below="@+id/btnLogin"
         android:layout_centerHorizontal="true"
         android:id="@+id/tvRegister" />
+
+
 
 </RelativeLayout>

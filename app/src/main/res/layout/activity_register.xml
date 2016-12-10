@@ -8,7 +8,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.jimmy.hospitalsapp.RegisterActivity">
+    tools:context="com.jimmy.hospitalsapp.activities.RegisterActivity">
 
     <EditText
         android:id="@+id/etUserName"
@@ -17,28 +17,14 @@
         android:hint="Nombre de usuario"
         android:inputType="textPersonName" />
 
-    <View
-        android:id="@+id/separator"
-        android:layout_width="match_parent"
-        android:layout_height="1.5dp"
-        android:layout_below="@id/etUserName"
-        android:background="@android:color/background_dark" />
-
     <EditText
         android:id="@+id/etPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/separator"
+        android:layout_below="@id/etUserName"
         android:layout_marginTop="10dp"
         android:hint="Contraseña"
         android:inputType="textPassword" />
-
-    <View
-        android:id="@+id/separator2"
-        android:layout_width="match_parent"
-        android:layout_height="1.5dp"
-        android:layout_below="@id/etPassword"
-        android:background="@android:color/background_dark" />
 
     <Button
         android:id="@+id/btnRegister"
@@ -48,4 +34,6 @@
         android:layout_marginTop="18dp"
         android:background="@android:color/darker_gray"
         android:text="Registrar" />
+
+
 </RelativeLayout>
