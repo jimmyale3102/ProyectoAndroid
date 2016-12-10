@@ -10,8 +10,6 @@ public class ManagementApp {
     private ManagementAppointment mgAppointment;
 
     public ManagementApp() {
-        mgUser = new ManagementUser();
-        mgAppointment = new ManagementAppointment();
     }
 
 

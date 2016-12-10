@@ -8,6 +8,6 @@ import java.util.ArrayList;
 
 public class ManagementAppointment {
 
-    private ArrayList<Doctor> doctors
+    private ArrayList<Doctor> doctors;
 
 }
