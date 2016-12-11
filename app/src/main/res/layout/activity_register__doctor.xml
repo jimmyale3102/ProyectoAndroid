@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_register__doctor"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@color/azulbase1"
+    tools:context="com.jimmy.hospitalsapp.activities.Register_DoctorAct">
+
+    <Button
+        android:text="Agregar"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnaddDoc"
+        android:layout_alignBaseline="@+id/bntbackD"
+        android:layout_alignBottom="@+id/bntbackD"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="12dp"
+        android:layout_marginEnd="12dp" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:inputType="textPersonName"
+        android:text=""
+        android:ems="10"
+        android:hint="Nombre de Doctor"
+        android:background="@color/textfond"
+        android:id="@+id/namedoc"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="38dp" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:inputType="textPersonName"
+        android:text=""
+        android:hint="ID Doctor"
+        android:background="@color/textfond"
+        android:ems="10"
+        android:id="@+id/iddoc"
+        android:layout_below="@+id/namedoc"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="55dp" />
+
+    <TextView
+        android:text="Especialización"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:id="@+id/especView"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinner2"
+
+        android:layout_below="@+id/especView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:text="Volver"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/bntbackD"
+        android:layout_marginLeft="25dp"
+        android:layout_marginStart="25dp"
+        android:layout_below="@+id/spinner2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="37dp" />
+
+</RelativeLayout>
