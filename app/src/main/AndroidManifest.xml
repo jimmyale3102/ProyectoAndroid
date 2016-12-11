@@ -18,15 +18,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-            android:theme="@style/beginTheme" />
+        android:theme="@style/beginTheme" />
         <activity android:name=".activities.Register_DoctorAct" />
 
         <activity android:name=".activities.Register_PatientAct" />
 
-        <activity android:name=".activities.Register_Appoinment">
+        <activity android:name=".activities.Register_Appoinment"></activity>
 
-        </activity>
+        <activity android:name=".activities.MenuActivity"
+            android:theme="@style/MenuTheme"></activity>
     </application>
 
 </manifest>

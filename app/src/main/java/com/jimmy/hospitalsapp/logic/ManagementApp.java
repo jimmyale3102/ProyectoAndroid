@@ -10,7 +10,7 @@ import com.jimmy.hospitalsapp.activities.BeginActivity;
 
 public class ManagementApp {
 
-    Context context;
+    private Context context;
     private ManagementUser mgUser;
     private ManagementAppointment mgAppointment;
 
