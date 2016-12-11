@@ -10,12 +10,14 @@ public class Patient implements Comparable<Patient>{
     private String id;
     private short age;
     private String gender;
+    private String eps;
 
-    public Patient(String name, String id, short age, String gender) {
+    public Patient(String name, String id, short age, String gender,String eps) {
         this.name = name;
         this.id = id;
         this.age = age;
         this.gender = gender;
+        this.eps= eps;
     }
 
     public String getName() {
@@ -49,6 +51,10 @@ public class Patient implements Comparable<Patient>{
     public void setGender(String gender) {
         this.gender = gender;
     }
+
+    public String getEps(){return eps;}
+
+    public void setEps(String eps){this.eps=eps;}
 
     @Override
     public String toString() {

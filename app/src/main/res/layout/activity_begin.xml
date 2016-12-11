@@ -5,89 +5,90 @@
     android:id="@+id/activity_begin"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@mipmap/fondo_opaque"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
-    android:background="@drawable/fondo_opaque"
     tools:context="com.jimmy.hospitalsapp.activities.BeginActivity"
     tools:ignore="UnusedAttribute">
 
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical">
 
         <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
             android:id="@+id/topBar"
+            android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:layout_marginTop="30dp">
+            android:layout_marginTop="30dp"
+            android:orientation="horizontal">
 
             <ImageView
+                android:id="@+id/imgLogo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:srcCompat="@drawable/logo"
-                android:id="@+id/imgLogo"
-                android:layout_weight="1" />
+                app:srcCompat="@drawable/logo" />
         </LinearLayout>
 
         <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:id="@+id/lyDates"
-            android:layout_marginTop="10dp">
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
 
             <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textPersonName"
-                android:ems="10"
                 android:id="@+id/etUserName"
-                android:hint="Usuario"
-                android:layout_marginTop="20dp" />
-
-            <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPassword"
+                android:layout_marginTop="20dp"
                 android:ems="10"
+                android:hint="Usuario"
+                android:inputType="textPersonName"
+                android:textColorHint="@android:color/black" />
+
+            <EditText
                 android:id="@+id/etPassword"
-                android:hint="Contraseña" />
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Contraseña"
+                android:inputType="textPassword"
+                android:textColorHint="@android:color/black" />
 
 
         </LinearLayout>
 
         <LinearLayout
-            android:orientation="vertical"
+            android:id="@+id/LoinButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/LoinButton"
-            android:layout_marginTop="10dp">
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
 
             <ImageButton
-                android:background="@drawable/image_buton_login"
                 android:id="@+id/btnLogin"
-                android:layout_height="80dp"
-                android:layout_marginLeft="50dp"
                 android:layout_width="250dp"
-                android:scaleType="fitXY"
-                android:layout_marginTop="20dp" />
+                android:layout_height="80dp"
+                android:layout_gravity="center"
+                android:background="@mipmap/image_buton_login"
+                android:scaleType="fitXY" />
+
+            <TextView
+                android:id="@+id/tvRegistrer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Registrarse"
+                android:textAlignment="center"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"
+                android:textStyle="normal|italic" />
         </LinearLayout>
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:text="Registrate"
-            android:ems="10"
-            android:id="@+id/etRegistrer"
-            android:textColor="@android:color/background_dark"
-            android:textStyle="normal|italic"
-            android:gravity="center_vertical|center"
-            android:singleLine="false"
-            android:allowUndo="true" />
     </LinearLayout>
 </RelativeLayout>

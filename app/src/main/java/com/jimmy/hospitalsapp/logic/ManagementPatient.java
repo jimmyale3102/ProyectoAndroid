@@ -14,12 +14,12 @@ public class ManagementPatient {
         patients = new ArrayList<>();
     }
 
-    public boolean addPatient(String name, String id, short age, String gender) {
+    public boolean addPatient(String name, String id, short age, String gender, String eps) {
         if(compareId(id)) {
             return false;
         }
         if(findPatient(id) == -1) {
-            patients.add(new Patient(name, id, age, gender));
+            patients.add(new Patient(name, id, age, gender,eps));
             return true;
         }
         return false;

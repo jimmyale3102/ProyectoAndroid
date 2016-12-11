@@ -1,5 +1,7 @@
 package com.jimmy.hospitalsapp.logic;
 
+import android.content.Context;
+
 import com.jimmy.hospitalsapp.activities.BeginActivity;
 
 /**
@@ -8,19 +10,18 @@ import com.jimmy.hospitalsapp.activities.BeginActivity;
 
 public class ManagementApp {
 
+    Context context;
     private ManagementUser mgUser;
     private ManagementAppointment mgAppointment;
 
-    public ManagementApp() {
-        mgUser = new ManagementUser(new BeginActivity());
-        mgAppointment = new ManagementAppointment();
+    public ManagementApp(Context context) {
+        this.context = context;
+        this.mgUser = new ManagementUser(context);
+        this.mgAppointment = new ManagementAppointment();
     }
 
-    public boolean validateUser(String userName) {
-        if(mgUser.validateUserName(userName)) {
-
-        }
-        return false;
+    public boolean validateUser(String userName, String password) {
+        return mgUser.validateUser(userName, password);
     }
 
     public boolean validateDoctor(String idDoctor) {
