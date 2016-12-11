@@ -15,16 +15,17 @@ import com.jimmy.hospitalsapp.logic.ManagementApp;
 
 public class BeginActivity extends AppCompatActivity {
 
-    EditText etUserName;
-    EditText etPassword;
-    ImageButton btnLogin;
-    TextView tvRegistrer;
-    ManagementApp mgApp;
+    private EditText etUserName;
+    private EditText etPassword;
+    private ImageButton btnLogin;
+    private TextView tvRegistrer;
+    private ManagementApp mgApp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_begin);
+
         mgApp = new ManagementApp(this);
 
         etUserName = (EditText) findViewById(R.id.etUserName);
@@ -45,7 +46,7 @@ public class BeginActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if (etUserName.getText().length() > 0 && etPassword.getText().length() > 0) {
                     if (mgApp.validateUser(etUserName.getText().toString(), etPassword.getText().toString())) {
-                        Intent login = new Intent(BeginActivity.this, Register_DoctorAct.class);
+                        Intent login = new Intent(BeginActivity.this, MenuActivity.class);
                         startActivity(login);
                     } else {
                         onAlertDialog();

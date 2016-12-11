@@ -20,13 +20,11 @@
         </activity>
         android:theme="@style/beginTheme" />
         <activity android:name=".activities.Register_DoctorAct" />
-
         <activity android:name=".activities.Register_PatientAct" />
-
-        <activity android:name=".activities.Register_Appoinment"></activity>
-
-        <activity android:name=".activities.MenuActivity"
-            android:theme="@style/MenuTheme"></activity>
+        <activity android:name=".activities.Register_Appoinment" />
+        <activity
+            android:name=".activities.MenuActivity"
+            android:theme="@style/MenuTheme" />
     </application>
 
 </manifest>

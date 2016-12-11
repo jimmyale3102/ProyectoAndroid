@@ -3,4 +3,7 @@
     <string name="texto">Hola Mundo</string>
     <string name="vacío"> </string>
     <string name="menu">Menú </string>
+    <string name="title_activity_consult">ConsultActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
 </resources>
