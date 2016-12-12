@@ -12,10 +12,12 @@ public class ManagementApp {
 
     private Context context;
     private ManagementUser mgUser;
+    private ManagementDoctor mgDoc;
     private ManagementAppointment mgAppointment;
 
     public ManagementApp(Context context) {
         this.context = context;
+        this.mgDoc = new ManagementDoctor();
         this.mgUser = new ManagementUser(context);
         this.mgAppointment = new ManagementAppointment();
     }
@@ -23,6 +25,9 @@ public class ManagementApp {
     public boolean validateUser(String userName, String password) {
         return mgUser.validateUser(userName, password);
     }
+
+
+   public boolean addAppointment(String date , String idDoctor , String idPatient ){return false;}
 
     public boolean validateDoctor(String idDoctor) {
         return false;
