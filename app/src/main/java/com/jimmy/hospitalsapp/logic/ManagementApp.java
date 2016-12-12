@@ -13,25 +13,24 @@ public class ManagementApp {
     private Context context;
     private ManagementUser mgUser;
     private ManagementAppointment mgAppointment;
+    private ManagementPatient mgPatient;
 
     public ManagementApp(Context context) {
         this.context = context;
         this.mgUser = new ManagementUser(context);
         this.mgAppointment = new ManagementAppointment();
+        this.mgPatient = mgPatient;
     }
 
     public boolean validateUser(String userName, String password) {
         return mgUser.validateUser(userName, password);
     }
-
-    public boolean validateDoctor(String idDoctor) {
+    public boolean addPatient( String name, String id, short age, String gender, String eps ) {
+        if(mgPatient.addPatient(name, id, age, gender, eps)) {
+            return true;
+        }
         return false;
     }
-
-    public boolean validatePatient(String idPatient) {
-        return false;
-    }
-
     public Appointment searchAppointment() {
         return null;
     }

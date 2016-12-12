@@ -31,9 +31,9 @@
         android:text=""
         android:hint="Nombre del Paciente"
         android:ems="10"
-        android:id="@+id/namePat"
+        android:id="@+id/etNamePat"
         android:textColorHint="@color/Gris"
-        android:layout_above="@+id/idPat"
+        android:layout_above="@+id/etIdPat"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -44,9 +44,9 @@
         android:text=""
         android:hint="ID del Paciente"
         android:ems="10"
-        android:id="@+id/idPat"
+        android:id="@+id/etIdPat"
         android:textColorHint="@color/Gris"
-        android:layout_above="@+id/agePat"
+        android:layout_above="@+id/etAge"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -56,7 +56,7 @@
         android:inputType="number"
         android:hint="Edad"
         android:ems="3"
-        android:id="@+id/agePat"
+        android:id="@+id/etAge"
         android:layout_marginBottom="54dp"
         android:textColorHint="@color/Gris"
         android:layout_above="@+id/genderview"
@@ -69,7 +69,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/genderview"
         android:layout_marginBottom="20dp"
-        android:layout_above="@+id/radioman"
+        android:layout_above="@+id/rdBtnMan"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -77,9 +77,9 @@
         android:text="Otro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/radiowoman"
-        android:layout_alignBaseline="@+id/radiother"
-        android:layout_alignBottom="@+id/radiother"
+        android:id="@+id/rdBtnOther"
+        android:layout_alignBaseline="@+id/rdBtnWoman"
+        android:layout_alignBottom="@+id/rdBtnWoman"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_marginRight="42dp"
@@ -89,9 +89,9 @@
         android:text="Hombre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/radioman"
-        android:layout_alignBaseline="@+id/radiother"
-        android:layout_alignBottom="@+id/radiother"
+        android:id="@+id/rdBtnMan"
+        android:layout_alignBaseline="@+id/rdBtnWoman"
+        android:layout_alignBottom="@+id/rdBtnWoman"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -99,8 +99,8 @@
         android:text="Mujer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/radiother"
-        android:layout_above="@+id/epstxt"
+        android:id="@+id/rdBtnWoman"
+        android:layout_above="@+id/etEps"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="32dp" />
 
@@ -111,10 +111,10 @@
         android:text=""
         android:hint="Empresa Prestadora de Salud   (E.P.S)"
         android:ems="10"
-        android:id="@+id/epstxt"
+        android:id="@+id/etEps"
         android:background="@color/textfond"
         android:layout_marginBottom="18dp"
-        android:layout_above="@+id/button"
+        android:layout_above="@+id/btnAddPatient"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:textColorHint="@color/Gris" />
@@ -123,7 +123,7 @@
         android:text="Agregrar"
         android:layout_width="120dp"
         android:layout_height="wrap_content"
-        android:id="@+id/button"
+        android:id="@+id/btnAddPatient"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
 

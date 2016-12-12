@@ -70,5 +70,9 @@ public class BeginActivity extends AppCompatActivity {
         Toast toast = Toast.makeText(this, "Hay campos vacios", Toast.LENGTH_SHORT);
         toast.show();
     }
+
+    public ManagementApp getMgApp() {
+        return mgApp;
+    }
 }
 
