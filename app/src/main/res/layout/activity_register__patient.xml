@@ -9,7 +9,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="@color/textfond"
+    android:background="@color/azulbase1"
     tools:context="com.jimmy.hospitalsapp.activities.Register_PatientAct">
 
     <TextView
@@ -23,19 +23,6 @@
         android:textSize="30sp"
         android:background="@color/Gris"
         android:gravity="center_vertical|center_horizontal" />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:inputType="textPersonName"
-        android:text=""
-        android:hint="Nombre del Paciente"
-        android:ems="10"
-        android:id="@+id/etNamePat"
-        android:textColorHint="@color/Gris"
-        android:layout_above="@+id/etIdPat"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
 
     <EditText
         android:layout_width="match_parent"
@@ -112,7 +99,7 @@
         android:hint="Empresa Prestadora de Salud   (E.P.S)"
         android:ems="10"
         android:id="@+id/etEps"
-        android:background="@color/textfond"
+
         android:layout_marginBottom="18dp"
         android:layout_above="@+id/btnAddPatient"
         android:layout_alignParentLeft="true"
@@ -126,5 +113,19 @@
         android:id="@+id/btnAddPatient"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:inputType="textPersonName"
+        android:text=""
+        android:hint="Nombre del Paciente"
+        android:ems="10"
+        android:id="@+id/etNamePat"
+        android:textColorHint="@color/Gris"
+        android:layout_above="@+id/etIdPat"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        />
 
 </RelativeLayout>

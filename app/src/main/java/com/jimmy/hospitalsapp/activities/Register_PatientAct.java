@@ -76,7 +76,7 @@ public class Register_PatientAct extends AppCompatActivity implements View.OnCli
     }
 
     public void onToastAdd() {
-        Toast toast = Toast.makeText(this, "Paciente registrado", Toast.LENGTH_SHORT);
+        Toast toast = Toast.makeText(this, "Paciente Registrado", Toast.LENGTH_SHORT);
         toast.show();
     }
 
