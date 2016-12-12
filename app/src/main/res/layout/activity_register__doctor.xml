@@ -64,6 +64,7 @@
 
         android:layout_below="@+id/especView"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:spinnerMode="dialog" />
 
 </RelativeLayout>

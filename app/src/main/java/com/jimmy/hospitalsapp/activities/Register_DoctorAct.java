@@ -18,6 +18,9 @@ public class Register_DoctorAct extends AppCompatActivity {
     private EditText iddoc;
     private Spinner spinner2;
     private Button btnaddDoc;
+
+    String [] datosspe = {"Neurologo","Pediatra","Cardiologo"};
+
     private BeginActivity beginActivity;
 
     @Override
@@ -29,6 +32,7 @@ public class Register_DoctorAct extends AppCompatActivity {
         iddoc = (EditText) findViewById(R.id.iddoc);
         btnaddDoc = (Button)findViewById(R.id.btnaddApp);
         spinner2 = (Spinner) findViewById(R.id.spinner2);
+        logindatos();
 
         btnaddDoc.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -37,12 +41,11 @@ public class Register_DoctorAct extends AppCompatActivity {
 
                 String docname = namedoc.getText().toString();
                 String docid= iddoc.getText().toString();
-                String espci="";
+                String selec=datosspe.toString();
                 // cosnultar el spinner
 
-                if(beginActivity.getMgApp().addDoctor(docname,docid,espci)){
-
-                    Intent addDoct = new Intent(Register_DoctorAct.this, MenuActivity.class);
+                if(beginActivity.getMgApp().addDoctor(docname,docid,selec)){
+                Intent addDoct = new Intent(Register_DoctorAct.this, MenuActivity.class);
                     startActivity(addDoct);
                     onToastAdd();
                 }
@@ -55,15 +58,14 @@ public class Register_DoctorAct extends AppCompatActivity {
     }
 
     public void logindatos(){
-        String [] datosspe = {"Neurologo","Pediatra","Cardiologo"};
         ArrayAdapter<String> datosadap= new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,datosspe);
         spinner2.setAdapter(datosadap);
-
         //spinner2.setOnItemSelectedListener(new);
+
     }
 
     public void onToast(){
-        Toast toast = Toast.makeText(this,"Hay campos vacias o Falta información",Toast.LENGTH_SHORT);
+        Toast toast = Toast.makeText(this,"Hay campos vacios o Falta información",Toast.LENGTH_SHORT);
         toast.show();
 
     }
