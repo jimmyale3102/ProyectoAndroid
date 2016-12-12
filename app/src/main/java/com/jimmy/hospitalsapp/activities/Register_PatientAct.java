@@ -1,6 +1,7 @@
 package com.jimmy.hospitalsapp.activities;
 
 import android.content.Intent;
+import android.inputmethodservice.KeyboardView;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -12,7 +13,7 @@ import android.widget.Toast;
 
 import com.jimmy.hospitalsapp.R;
 
-public class Register_PatientAct extends AppCompatActivity {
+public class Register_PatientAct extends AppCompatActivity implements View.OnClickListener{
 
     private EditText etNamePat;
     private EditText etIdPat;
@@ -23,6 +24,7 @@ public class Register_PatientAct extends AppCompatActivity {
     private RadioButton rdBtnOther;
     private Button btnAddPatient;
     private BeginActivity bgActivity;
+    private String gender;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +40,10 @@ public class Register_PatientAct extends AppCompatActivity {
         rdBtnOther = (RadioButton) findViewById(R.id.rdBtnOther);
         btnAddPatient = (Button) findViewById(R.id.btnAddPatient);
 
+        rdBtnMan.setOnClickListener(this);
+        rdBtnWoman.setOnClickListener(this);
+        rdBtnOther.setOnClickListener(this);
+
         btnAddPatient.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -47,20 +53,6 @@ public class Register_PatientAct extends AppCompatActivity {
                         String id = etIdPat.getText().toString();
                         String age = etAge.getText().toString();
                         String eps = etEps.getText().toString();
-                        String gender = "";
-                        if(rdBtnMan.isActivated() == true) {
-                            gender = rdBtnMan.getText().toString();
-                            rdBtnWoman.setActivated(false);
-                            rdBtnOther.setActivated(false);
-                        } else if(rdBtnWoman.isActivated() == true) {
-                            gender = rdBtnWoman.getText().toString();
-                            rdBtnMan.setActivated(false);
-                            rdBtnOther.setActivated(false);
-                        } else if(rdBtnOther.isActivated() == true) {
-                            gender = rdBtnOther.getText().toString();
-                            rdBtnWoman.setActivated(false);
-                            rdBtnMan.setActivated(false);
-                        }
                         if ( bgActivity.getMgApp().addPatient(name, id, Short.parseShort(age), gender, eps)) {
 
                             Intent addPatient = new Intent(Register_PatientAct.this, MenuActivity.class);
@@ -86,5 +78,12 @@ public class Register_PatientAct extends AppCompatActivity {
     public void onToastAdd() {
         Toast toast = Toast.makeText(this, "Paciente registrado", Toast.LENGTH_SHORT);
         toast.show();
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+
+        }
     }
 }
