@@ -22,7 +22,6 @@
         android:layout_marginBottom="35dp"
         android:layout_above="@+id/btnaddApp"
         android:layout_alignParentLeft="true"
-        android:background="@color/textfond"
         android:layout_alignParentStart="true" />
 
     <EditText
@@ -35,7 +34,7 @@
         android:layout_above="@+id/idPati"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:background="@color/textfond"
+
         android:layout_marginBottom="12dp" />
 
     <Button
@@ -51,10 +50,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/calendarView4"
-        android:layout_alignParentTop="true"
+        android:layout_above="@+id/iddoc"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_above="@+id/iddoc"
+        android:layout_marginBottom="11dp"
         android:layout_alignRight="@+id/btnaddApp"
         android:layout_alignEnd="@+id/btnaddApp" />
 

@@ -14,12 +14,14 @@ public class ManagementApp {
     private ManagementUser mgUser;
     private ManagementDoctor mgDoc;
     private ManagementAppointment mgAppointment;
+    private ManagementPatient mgPatient;
 
     public ManagementApp(Context context) {
         this.context = context;
         this.mgDoc = new ManagementDoctor();
         this.mgUser = new ManagementUser(context);
         this.mgAppointment = new ManagementAppointment();
+        this.mgPatient = mgPatient;
     }
 
     public boolean validateUser(String userName, String password) {
@@ -27,14 +29,25 @@ public class ManagementApp {
     }
 
 
-   public boolean addAppointment(String date , String idDoctor , String idPatient ){return false;}
 
-    public boolean validateDoctor(String idDoctor) {
+   public boolean addAppointment(String date , String idDoctor , String idPatient ){return false;}
+//rectificar
+
+    public boolean validateDoctor(String idDoctor) {return false;}
+
+
+    public boolean addPatient( String name, String id, short age, String gender, String eps ) {
+        if(mgPatient.addPatient(name, id, age, gender, eps)) {
+            return true;
+        }
         return false;
     }
 
-    public boolean validatePatient(String idPatient) {
-        return false;
+    public boolean addDoctor(String namedoc, String iddoc, String spespecializa){
+        if(mgDoc.addDoctor(namedoc,iddoc,spespecializa)){
+            return true;
+        }
+        return  false;
     }
 
     public Appointment searchAppointment() {
