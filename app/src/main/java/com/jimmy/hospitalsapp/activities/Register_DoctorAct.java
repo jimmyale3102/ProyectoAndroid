@@ -29,6 +29,7 @@ public class Register_DoctorAct extends AppCompatActivity {
         iddoc = (EditText) findViewById(R.id.iddoc);
         btnaddDoc = (Button)findViewById(R.id.btnaddApp);
         spinner2 = (Spinner) findViewById(R.id.spinner2);
+        logindatos();
 
         btnaddDoc.setOnClickListener(new View.OnClickListener(){
             @Override
