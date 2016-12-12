@@ -9,8 +9,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
-
 import com.jimmy.hospitalsapp.R;
+import com.jimmy.hospitalsapp.logic.ManagementApp;
 
 public class Register_DoctorAct extends AppCompatActivity {
 
@@ -18,7 +18,9 @@ public class Register_DoctorAct extends AppCompatActivity {
     private EditText iddoc;
     private Spinner spinner2;
     private Button btnaddDoc;
-    private BeginActivity beginActivity;
+    private String docname;
+    private String docid;
+    private String espci;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,12 +38,11 @@ public class Register_DoctorAct extends AppCompatActivity {
             public void onClick(View view){
             if(namedoc.getText().length()>0  && iddoc.getText().length()>0 ){
 
-                String docname = namedoc.getText().toString();
-                String docid= iddoc.getText().toString();
-                String espci="";
-                // cosnultar el spinner
+                docname = namedoc.getText().toString();
+                docid= iddoc.getText().toString();
+                espci = "";
 
-                if(beginActivity.getMgApp().addDoctor(docname,docid,espci)){
+                if(ManagementApp.addDoctor(docname,docid,espci)){
 
                     Intent addDoct = new Intent(Register_DoctorAct.this, MenuActivity.class);
                     startActivity(addDoct);
