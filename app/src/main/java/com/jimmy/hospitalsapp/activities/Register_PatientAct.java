@@ -2,6 +2,7 @@ package com.jimmy.hospitalsapp.activities;
 
 import android.content.Context;
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -58,6 +59,7 @@ public class Register_PatientAct extends AppCompatActivity implements View.OnCli
                         eps = etEps.getText().toString();
                         if (ManagementApp.addPatient(name, id, Short.parseShort(age), gender, eps)) {
                             Intent addPatient = new Intent(context, MenuActivity.class);
+                            onAlertDialog();
                             startActivity(addPatient);
                         } else {
                             onToastAdd();
@@ -103,6 +105,13 @@ public class Register_PatientAct extends AppCompatActivity implements View.OnCli
                 gender = rdBtnOther.getText().toString();
                 break;
         }
+    }
+
+    public void onAlertDialog() {
+        AlertDialog alertDialog = new AlertDialog.Builder(this).create();
+        alertDialog.setTitle("¡Exito!");
+        alertDialog.setMessage("El paciente se registró correctamente");
+        alertDialog.show();
     }
 
 }

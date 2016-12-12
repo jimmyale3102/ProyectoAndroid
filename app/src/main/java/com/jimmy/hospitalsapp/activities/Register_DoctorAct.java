@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -29,9 +28,8 @@ public class Register_DoctorAct extends AppCompatActivity {
 
         namedoc = (EditText) findViewById(R.id.namedoc);
         iddoc = (EditText) findViewById(R.id.iddoc);
-        btnaddDoc = (Button)findViewById(R.id.btnaddApp);
+        btnaddDoc = (Button)findViewById(R.id.btnaddDoc);
         spinner2 = (Spinner) findViewById(R.id.spinner2);
-        logindatos();
 
         btnaddDoc.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -54,14 +52,6 @@ public class Register_DoctorAct extends AppCompatActivity {
             }
         });
 
-    }
-
-    public void logindatos(){
-        String [] datosspe = {"Neurologo","Pediatra","Cardiologo"};
-        ArrayAdapter<String> datosadap= new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,datosspe);
-        spinner2.setAdapter(datosadap);
-
-        //spinner2.setOnItemSelectedListener(new);
     }
 
     public void onToast(){

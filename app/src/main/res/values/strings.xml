@@ -9,4 +9,8 @@
     <string name="Hombre">Hombre</string>
     <string name="Mujer">Mujer</string>
     <string name="Otro">Otro</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="title_activity_menu">menu</string>
 </resources>
