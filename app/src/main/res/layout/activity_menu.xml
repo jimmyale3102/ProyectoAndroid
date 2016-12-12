@@ -13,12 +13,11 @@
     tools:context="com.jimmy.hospitalsapp.activities.MenuActivity">
 
     <TextView
-        android:text="TextView"
+        android:text="Menú"
         android:layout_width="match_parent"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:id="@+id/tvTitle"
-        tools:text="Menú"
         android:textColor="@android:color/white"
         android:background="@color/Gris"
         android:layout_height="60dp"

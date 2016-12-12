@@ -5,127 +5,117 @@
     android:id="@+id/activity_register__patient"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/azulbase1"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="@color/azulbase1"
     tools:context="com.jimmy.hospitalsapp.activities.Register_PatientAct">
 
     <TextView
-        android:text="Registro de Paciente"
+        android:id="@+id/tvTitle"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:id="@+id/tvTitle"
-        android:textColor="@android:color/white"
-        android:textSize="30sp"
         android:background="@color/Gris"
-        android:gravity="center_vertical|center_horizontal" />
+        android:gravity="center_vertical|center_horizontal"
+        android:text="Registro de Paciente"
+        android:textColor="@android:color/white"
+        android:textSize="30sp" />
 
     <EditText
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:inputType="textPersonName"
-        android:text=""
-        android:hint="ID del Paciente"
-        android:ems="10"
-        android:id="@+id/etIdPat"
-        android:textColorHint="@color/Gris"
-        android:layout_above="@+id/etAge"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:inputType="number"
-        android:hint="Edad"
-        android:ems="3"
-        android:id="@+id/etAge"
-        android:layout_marginBottom="54dp"
-        android:textColorHint="@color/Gris"
-        android:layout_above="@+id/genderview"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <TextView
-        android:text="Genero"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/genderview"
-        android:layout_marginBottom="20dp"
-        android:layout_above="@+id/rdBtnMan"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <RadioButton
-        android:text="Otro"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/rdBtnOther"
-        android:layout_alignBaseline="@+id/rdBtnWoman"
-        android:layout_alignBottom="@+id/rdBtnWoman"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginRight="42dp"
-        android:layout_marginEnd="42dp" />
-
-    <RadioButton
-        android:text="Hombre"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/rdBtnMan"
-        android:layout_alignBaseline="@+id/rdBtnWoman"
-        android:layout_alignBottom="@+id/rdBtnWoman"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <RadioButton
-        android:text="Mujer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/rdBtnWoman"
-        android:layout_above="@+id/etEps"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="32dp" />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:inputType="textPersonName"
-        android:text=""
-        android:hint="Empresa Prestadora de Salud   (E.P.S)"
-        android:ems="10"
-        android:id="@+id/etEps"
-
-        android:layout_marginBottom="18dp"
-        android:layout_above="@+id/btnAddPatient"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:textColorHint="@color/Gris" />
-
-    <Button
-        android:text="Agregrar"
-        android:layout_width="120dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/btnAddPatient"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:inputType="textPersonName"
-        android:text=""
-        android:hint="Nombre del Paciente"
-        android:ems="10"
         android:id="@+id/etNamePat"
-        android:textColorHint="@color/Gris"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
         android:layout_above="@+id/etIdPat"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        />
+        android:ems="10"
+        android:hint="Nombre del Paciente"
+        android:inputType="textPersonName"
+        android:text=""
+        android:textColorHint="@color/Gris" />
+
+    <EditText
+        android:id="@+id/etIdPat"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_above="@+id/etAge"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:ems="10"
+        android:hint="ID del Paciente"
+        android:inputType="textPersonName"
+        android:text=""
+        android:textColorHint="@color/Gris" />
+
+    <EditText
+        android:id="@+id/etAge"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_centerVertical="true"
+        android:ems="3"
+        android:hint="Edad"
+        android:inputType="number"
+        android:textColorHint="@color/Gris" />
+
+    <TextView
+        android:id="@+id/genderview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/rdBtnMan"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="20dp"
+        android:text="Genero" />
+
+    <RadioButton
+        android:id="@+id/rdBtnMan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/etEps"
+        android:text="Hombre" />
+
+    <RadioButton
+        android:id="@+id/rdBtnWoman"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/etEps"
+        android:layout_centerHorizontal="true"
+        android:text="@string/Mujer" />
+
+    <RadioButton
+        android:id="@+id/rdBtnOther"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/etEps"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="13dp"
+        android:layout_marginRight="13dp"
+        android:text="@string/Otro" />
+
+    <EditText
+        android:id="@+id/etEps"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_above="@+id/btnAddPatient"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="18dp"
+        android:ems="10"
+        android:hint="Empresa Prestadora de Salud   (E.P.S)"
+        android:inputType="textPersonName"
+        android:text=""
+        android:textColorHint="@color/Gris" />
+
+    <Button
+        android:id="@+id/btnAddPatient"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="Agregrar" />
 
 </RelativeLayout>
