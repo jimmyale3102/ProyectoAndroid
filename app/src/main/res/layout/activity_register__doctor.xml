@@ -31,7 +31,7 @@
 
         android:layout_marginTop="27dp"
         android:ems="10"
-        android:hint="ID Doctor"
+        android:hint="N° Tarjeta de doctor"
         android:inputType="textPersonName"
         android:text=""
         android:layout_below="@+id/namedoc"
@@ -55,7 +55,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/especView"
-        android:entries="@array/spinner"
+        android:entries="@array/SpinnerSpecialization"
         android:spinnerMode="dialog" />
 
     <Button

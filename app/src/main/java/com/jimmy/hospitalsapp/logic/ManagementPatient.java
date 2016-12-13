@@ -11,6 +11,7 @@ public class ManagementPatient {
     private ArrayList<Patient> patients;
 
     public ManagementPatient() {
+
         patients = new ArrayList<>();
     }
 

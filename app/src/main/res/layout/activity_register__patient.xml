@@ -60,55 +60,65 @@
         android:inputType="number"
         android:textColorHint="@color/Gris" />
 
-    <TextView
-        android:id="@+id/genderview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/rdBtnMan"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="20dp"
-        android:text="Genero" />
-
     <RadioButton
         android:id="@+id/rdBtnMan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/etEps"
-        android:text="Hombre" />
+        android:text="Hombre"
+        android:layout_below="@+id/genderview"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="17dp" />
+
+    <TextView
+        android:id="@+id/genderview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Genero"
+        android:layout_below="@+id/etAge"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="20dp" />
 
     <RadioButton
         android:id="@+id/rdBtnWoman"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/etEps"
-        android:layout_centerHorizontal="true"
-        android:text="@string/Mujer" />
+        android:text="@string/Mujer"
+        android:layout_alignBaseline="@+id/rdBtnMan"
+        android:layout_alignBottom="@+id/rdBtnMan"
+        android:layout_centerHorizontal="true" />
 
     <RadioButton
         android:id="@+id/rdBtnOther"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/etEps"
-        android:layout_alignParentEnd="true"
+        android:text="@string/Otro"
+        android:layout_alignBaseline="@+id/rdBtnWoman"
+        android:layout_alignBottom="@+id/rdBtnWoman"
         android:layout_alignParentRight="true"
-        android:layout_marginEnd="13dp"
-        android:layout_marginRight="13dp"
-        android:text="@string/Otro" />
+        android:layout_alignParentEnd="true" />
 
-    <EditText
-        android:id="@+id/etEps"
+    <TextView
+        android:id="@+id/tvEps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="EPS"
+        android:layout_above="@+id/spnSpecialization"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="360dp" />
+
+    <Spinner
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="wrap_content"
         android:layout_above="@+id/btnAddPatient"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="18dp"
-        android:ems="10"
-        android:hint="Empresa Prestadora de Salud   (E.P.S)"
-        android:inputType="textPersonName"
-        android:text=""
-        android:textColorHint="@color/Gris" />
+        android:layout_marginBottom="15dp"
+        android:entries="@array/SpinnerEPS"
+        android:id="@+id/spnEps"
+        android:spinnerMode="dialog" />
 
     <Button
         android:id="@+id/btnAddPatient"

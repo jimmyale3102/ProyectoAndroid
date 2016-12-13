@@ -8,14 +8,14 @@
     </string-array>
 
     <string-array name="SpinnerHour">
-        <item>8:00 pm</item>
-        <item>8:30 pm</item>
-        <item>9:00 pm</item>
-        <item>9:30 pm</item>
-        <item>10:00 pm</item>
-        <item>10:30 pm</item>
-        <item>11:00 pm</item>
-        <item>11:30 pm</item>
+        <item>8:00 am</item>
+        <item>8:30 am</item>
+        <item>9:00 am</item>
+        <item>9:30 am</item>
+        <item>10:00 am</item>
+        <item>10:30 am</item>
+        <item>11:00 am</item>
+        <item>11:30 am</item>
         <item>2:00 pm</item>
         <item>2:30 pm</item>
         <item>3:00 pm</item>
@@ -24,6 +24,49 @@
         <item>4:30 pm</item>
         <item>5:00 pm</item>
         <item>5:30 pm</item>
+    </string-array>
+
+    <string-array name="SpinnerEPS">
+       <item>Cafesalud</item>
+       <item>Calisalud</item>
+       <item>Caprecom</item>
+       <item>Capresoca</item>
+       <item>Colmédica</item>
+       <item>Compensar</item>
+       <item>Comfenalco Antioquia</item>
+       <item>Comfenalco Valle</item>
+       <item>Convida ARS</item>
+       <item>Coomeva EPS</item>
+       <item>Cruz Blanca</item>
+       <item>Famisanar</item>
+       <item>Humana Vivir</item>
+       <item>Instituto de los Seguros Sociales</item>
+       <item>Salud Colmena</item>
+       <item>Salud Colpatria</item>
+       <item>Salud Total</item>
+       <item>Saludcolombia EPS S.A.</item>
+       <item>Saludvida</item>
+       <item>Sanitas</item>
+       <item>Selvasalud</item>
+       <item>Solsalud</item>
+       <item>S.O.S EPS</item>
+       <item>Susalud</item>
+    </string-array>
+
+    <string-array name="SpinnerSpecialization">
+        <item>Cardiología</item>
+        <item>Cirugía Cardiovascular</item>
+        <item>Endocrinología</item>
+        <item>Infectología</item>
+        <item>Medicina Estética</item>
+        <item>Medicina Interna</item>
+        <item>Neonatología</item>
+        <item>Neurocirugía</item>
+        <item>Neurología</item>
+        <item>Oftalmología</item>
+        <item>PsiquiatríaPsiquiatría</item>
+        <item>Radiología</item>
+        <item>Urología</item>
     </string-array>
 
 </resources>

@@ -49,7 +49,7 @@ public class Register_Appoinment extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (idPat.getText().length() > 0) {
-                   if(ManagementApp.validateDoctor(tjDoc.getText().toString()) && ManagementApp.findPatient(idPat.getText().toString())) {
+                   if(ManagementApp.validateDoctor(tjDoc.getText().toString()) || ManagementApp.findPatient(idPat.getText().toString())) {
                        onAlertDialog2();
                    } else {
                        if (ManagementApp.addAppointment(date, hour.toString(), idPat.getText().toString(), tjDoc.getText().toString())) {

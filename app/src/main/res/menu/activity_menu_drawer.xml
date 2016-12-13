@@ -5,31 +5,31 @@
         <item
             android:id="@+id/nav_camera"
             android:icon="@drawable/ic_menu_camera"
-            android:title="Import" />
+            android:title="Buscar paciente" />
         <item
             android:id="@+id/nav_gallery"
             android:icon="@drawable/ic_menu_gallery"
-            android:title="Gallery" />
+            android:title="Buscar Doctor" />
         <item
             android:id="@+id/nav_slideshow"
             android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
+            android:title="Buscar cita" />
         <item
             android:id="@+id/nav_manage"
             android:icon="@drawable/ic_menu_manage"
             android:title="Tools" />
     </group>
 
-    <item android:title="Communicate">
+    <item android:title="Informacion">
         <menu>
             <item
-                android:id="@+id/nav_share"
+                android:id="@+id/nav_inf"
                 android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
+                android:title="Acerca de" />
             <item
-                android:id="@+id/nav_send"
+                android:id="@+id/nav_thanks"
                 android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
+                android:title="Agradecimientos" />
         </menu>
     </item>
 
