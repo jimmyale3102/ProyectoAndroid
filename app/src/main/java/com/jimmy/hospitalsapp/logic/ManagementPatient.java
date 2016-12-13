@@ -47,12 +47,12 @@ public class ManagementPatient {
                 }
             }
         }
-        return null;
+        return patientAux;
     }
 
     public int findPatient(String id) {
         ArrayList<Patient> patientAux = sortIdPatient();
-        short middle = 0;
+        short middle;
         short begin = 0;
         short finish = (short) (patientAux.size() - 1);
         while(begin <= finish) {

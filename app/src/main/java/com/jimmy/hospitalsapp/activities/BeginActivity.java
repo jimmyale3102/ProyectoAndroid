@@ -45,7 +45,7 @@ public class BeginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (etUserName.getText().length() > 0 && etPassword.getText().length() > 0) {
-                    if (mgApp.validateUser(etUserName.getText().toString(), etPassword.getText().toString())) {
+                    if (ManagementApp.validateUser(etUserName.getText().toString(), etPassword.getText().toString())) {
                         Intent login = new Intent(BeginActivity.this, MenuActivity.class);
                         startActivity(login);
                     } else {
@@ -59,8 +59,7 @@ public class BeginActivity extends AppCompatActivity {
     }
 
     public void onAlertDialog() {
-        AlertDialog alertDialog;
-        alertDialog = new AlertDialog.Builder(this).create();
+        AlertDialog alertDialog = new AlertDialog.Builder(this).create();
         alertDialog.setTitle("Error");
         alertDialog.setMessage("El usuario y/o la contraseña son incorrectos");
         alertDialog.show();
@@ -71,8 +70,5 @@ public class BeginActivity extends AppCompatActivity {
         toast.show();
     }
 
-    public ManagementApp getMgApp() {
-        return mgApp;
-    }
 }
 
