@@ -4,6 +4,8 @@ import android.content.Context;
 
 import com.jimmy.hospitalsapp.activities.BeginActivity;
 
+import java.util.ArrayList;
+
 /**
  * Created by Jimmy on 09/12/2016.
  */
@@ -34,7 +36,7 @@ public class ManagementApp {
 
 
     public static boolean addAppointment(String date, String idDoctor, String idPatient) {
-        return false;
+        return mgAppointment.addApirpointment(date, idDoctor, idPatient);
     }
 
     public boolean validateDoctor(String idDoctor) {
@@ -68,4 +70,11 @@ public class ManagementApp {
         return null;
     }
 
+    public static  ManagementPatient getMgPatient() {
+        return mgPatient;
+    }
+
+    public static  ManagementDoctor getMgDoctors() {
+        return mgDoc;
+    }
 }

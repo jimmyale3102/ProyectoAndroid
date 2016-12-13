@@ -1,6 +1,7 @@
 package com.jimmy.hospitalsapp.activities;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -10,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Toast;
+
 import com.jimmy.hospitalsapp.R;
 import com.jimmy.hospitalsapp.logic.ManagementApp;
 
@@ -58,9 +60,7 @@ public class Register_PatientAct extends AppCompatActivity implements View.OnCli
                         age = etAge.getText().toString();
                         eps = etEps.getText().toString();
                         if (ManagementApp.addPatient(name, id, Short.parseShort(age), gender, eps)) {
-                            Intent addPatient = new Intent(context, MenuActivity.class);
                             onAlertDialog();
-                            startActivity(addPatient);
                         } else {
                             onToastAdd();
                         }
@@ -111,6 +111,12 @@ public class Register_PatientAct extends AppCompatActivity implements View.OnCli
         AlertDialog alertDialog = new AlertDialog.Builder(this).create();
         alertDialog.setTitle("¡Exito!");
         alertDialog.setMessage("El paciente se registró correctamente");
+        alertDialog.setButton(DialogInterface.BUTTON_POSITIVE, "Aceptar", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                finish();
+            }
+        });
         alertDialog.show();
     }
 

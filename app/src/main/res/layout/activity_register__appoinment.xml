@@ -15,46 +15,43 @@
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:inputType="textPersonName"
-        android:text=""
-        android:hint="ID de Doctor"
+        android:hint="ID de Paciente"
         android:ems="10"
-        android:id="@+id/idPati"
-        android:layout_marginBottom="35dp"
-        android:layout_above="@+id/btnaddApp"
+        android:id="@+id/idDoc"
+
+        android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="88dp" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:inputType="textPersonName"
-        android:hint="ID de Paciente"
+        android:text=""
+        android:hint="ID de Doctor"
         android:ems="10"
-        android:id="@+id/iddoc"
-        android:layout_above="@+id/idPati"
+        android:id="@+id/idPat"
+        android:layout_below="@+id/idDoc"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-
-        android:layout_marginBottom="12dp" />
+        android:layout_alignParentStart="true" />
 
     <Button
         android:text="Agregar"
         android:layout_width="120dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="37dp"
-        android:id="@+id/btnaddApp"
+        android:layout_marginBottom="119dp"
+        android:id="@+id/btnAddAppointment"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
 
-    <CalendarView
+    <Button
+        android:text="Fecha"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/calendarView4"
-        android:layout_above="@+id/iddoc"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="11dp"
-        android:layout_alignRight="@+id/btnaddApp"
-        android:layout_alignEnd="@+id/btnaddApp" />
+        android:layout_marginBottom="26dp"
+        android:id="@+id/btnDate"
+        android:layout_above="@+id/btnAddAppointment"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
