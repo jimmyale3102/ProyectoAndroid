@@ -7,4 +7,23 @@
         <item>Cuatro</item>
     </string-array>
 
+    <string-array name="SpinnerHour">
+        <item>8:00 pm</item>
+        <item>8:30 pm</item>
+        <item>9:00 pm</item>
+        <item>9:30 pm</item>
+        <item>10:00 pm</item>
+        <item>10:30 pm</item>
+        <item>11:00 pm</item>
+        <item>11:30 pm</item>
+        <item>2:00 pm</item>
+        <item>2:30 pm</item>
+        <item>3:00 pm</item>
+        <item>3:30 pm</item>
+        <item>4:00 pm</item>
+        <item>4:30 pm</item>
+        <item>5:00 pm</item>
+        <item>5:30 pm</item>
+    </string-array>
+
 </resources>

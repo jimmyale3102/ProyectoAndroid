@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.jimmy.hospitalsapp.R;
@@ -18,19 +19,21 @@ import java.util.Calendar;
 
 public class Register_Appoinment extends AppCompatActivity {
 
-    private EditText idDoc;
+    private EditText tjDoc;
     private EditText idPat;
     private Button btnAddAppointment;
     private Button btnDate;
     private String date;
+    private Spinner hour;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register__appoinment);
 
-        idDoc = (EditText) findViewById(R.id.idDoc);
+        tjDoc = (EditText) findViewById(R.id.tjDoc);
         idPat = (EditText) findViewById(R.id.idPat);
+        hour = (Spinner) findViewById(R.id.spHour);
         btnAddAppointment = (Button) findViewById(R.id.btnAddAppointment);
         btnDate =  (Button) findViewById(R.id.btnDate);
 
@@ -46,11 +49,15 @@ public class Register_Appoinment extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (idPat.getText().length() > 0) {
-                    if (ManagementApp.addAppointment(date, idDoc.getText().toString(), idPat.getText().toString())) {
-                        onAlertDialog();
-                    } else {
-                        onToastAdd();
-                    }
+                   if(ManagementApp.validateDoctor(tjDoc.getText().toString()) && ManagementApp.findPatient(idPat.getText().toString())) {
+                       onAlertDialog2();
+                   } else {
+                       if (ManagementApp.addAppointment(date, hour.toString(), idPat.getText().toString(), tjDoc.getText().toString())) {
+                           onAlertDialog();
+                       } else {
+                           onToastAdd();
+                       }
+                   }
                 } else {
                     onToast();
                 }
@@ -75,22 +82,20 @@ public class Register_Appoinment extends AppCompatActivity {
         dialog.show();
     }
 
-
-
     public void onToast() {
         Toast toast = Toast.makeText(this, "Hay campos vacios o falta información", Toast.LENGTH_SHORT);
         toast.show();
     }
 
     public void onToastAdd() {
-        Toast toast = Toast.makeText(this, "Imposible la Cita ya Existe", Toast.LENGTH_SHORT);
+        Toast toast = Toast.makeText(this, "Imposible, la Cita ya Existe", Toast.LENGTH_SHORT);
         toast.show();
     }
 
     public void onAlertDialog() {
         AlertDialog alertDialog = new AlertDialog.Builder(this).create();
         alertDialog.setTitle("¡Exito!");
-        alertDialog.setMessage("El paciente se registró correctamente");
+        alertDialog.setMessage("La cita se registró correctamente");
         alertDialog.setButton(DialogInterface.BUTTON_POSITIVE, "Aceptar", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
@@ -100,4 +105,16 @@ public class Register_Appoinment extends AppCompatActivity {
         alertDialog.show();
     }
 
+    public void onAlertDialog2() {
+        AlertDialog alertDialog = new AlertDialog.Builder(this).create();
+        alertDialog.setTitle("Error");
+        alertDialog.setMessage("El paciente y/o el doctor no existen");
+        alertDialog.setButton(DialogInterface.BUTTON_POSITIVE, "Aceptar", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                finish();
+            }
+        });
+        alertDialog.show();
+    }
 }

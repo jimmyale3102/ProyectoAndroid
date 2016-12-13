@@ -15,43 +15,63 @@
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:inputType="textPersonName"
-        android:hint="ID de Paciente"
+        android:text=""
+        android:hint="N° Tarjeta de doctor"
         android:ems="10"
-        android:id="@+id/idDoc"
-
-        android:layout_alignParentTop="true"
+        android:id="@+id/tjDoc"
+        android:layout_marginBottom="43dp"
+        android:layout_alignBottom="@+id/idPat"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="88dp" />
+        android:layout_alignParentStart="true" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:inputType="textPersonName"
-        android:text=""
-        android:hint="ID de Doctor"
+        android:hint="ID de Paciente"
         android:ems="10"
         android:id="@+id/idPat"
-        android:layout_below="@+id/idDoc"
+        android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="88dp" />
 
-    <Button
-        android:text="Agregar"
-        android:layout_width="120dp"
+    <TextView
+        android:text="Hora"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="119dp"
-        android:id="@+id/btnAddAppointment"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_above="@+id/spHour"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/tvHour" />
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/spHour"
+        android:entries="@array/SpinnerHour"
+        android:spinnerMode="dialog"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toLeftOf="@+id/btnDate"
+        android:layout_toStartOf="@+id/btnDate" />
 
     <Button
         android:text="Fecha"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="26dp"
+        android:layout_marginBottom="62dp"
         android:id="@+id/btnDate"
         android:layout_above="@+id/btnAddAppointment"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:text="Agregar"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnAddAppointment"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
