@@ -3,7 +3,7 @@ package com.jimmy.hospitalsapp.logic;
 import java.io.Serializable;
 
 /**
- * Clase encargadade manejar los atributos de un paciente
+ * Clase encargada de manejar los atributos de un paciente
  * Created by Jimmy and Sergio  on 06/12/2016.
  */
 

@@ -4,7 +4,8 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
- * Created by Jimmy on 09/12/2016.
+ * Clase encargada de manejar los operaciones de order y añadir de la clase Doctor
+ * Created by Jimmy and Sergio  on 06/12/2016.
  */
 
 public class ManagementDoctor implements Serializable{
@@ -17,6 +18,14 @@ public class ManagementDoctor implements Serializable{
         doctors = new ArrayList<>();
     }
 
+    /**
+     * Metodo para añadir un Doctor
+     * @param name  nombre de el Doctor atributo tipo String
+     * @param id (tarejeta profecional ) de el Doctor de tipo String
+     * @param specialization Especializacion del el doctor atributo de tipo String
+     * @return tipo boolean
+     */
+
     public boolean addDoctor(String name, String id, String specialization) {
         if(compareId(id)) {
             return false;
@@ -28,6 +37,11 @@ public class ManagementDoctor implements Serializable{
         return false;
     }
 
+    /**
+     * Metodo que comparada el id del Doctor en existencias
+     * @param id (tarejeta profecional ) de el Doctor de tipo String
+     * @return tipo boolean
+     */
     private boolean compareId(String id) {
         ArrayList<Doctor> doctorAux = (ArrayList<Doctor>) doctors.clone();
         for (int i = 0; i < doctorAux.size(); i++) {
@@ -37,6 +51,11 @@ public class ManagementDoctor implements Serializable{
         }
         return false;
     }
+
+    /**
+     *Metodo que orderna por id (tarejeta profecional ) de el Doctor
+     * @return ArrayList<> ordenado clon de ArrayList<>Doctor
+     */
 
     public ArrayList<Doctor> sortIdDoctor() {
         Doctor doc = null;
@@ -53,6 +72,11 @@ public class ManagementDoctor implements Serializable{
         return doctorAux;
     }
 
+    /**
+     *Metodo que busca el Doctor por id
+     * @param id (tarejeta profecional ) de el Doctor de tipo String
+     * @return diferenciador(establecido) de tipo entero.
+     */
     public int findDoctor(String id) {
         ArrayList<Doctor> doctorAux = sortIdDoctor();
         short middle = 0;
@@ -70,6 +94,13 @@ public class ManagementDoctor implements Serializable{
         }
         return -1;
     }
+
+    /**
+     *
+     * @param id
+     * @return
+     */
+
 
     public Doctor getDoctor(String id) {
         ArrayList<Doctor> doctorAux = sortIdDoctor();
@@ -89,6 +120,10 @@ public class ManagementDoctor implements Serializable{
         return null;
     }
 
+    /**
+     *Metodo que retorna un clon de el ArrayList<>Doctor
+     * @return clon de ArrayList<Doctor>
+     */
     public ArrayList<Doctor> getDoctors() {
         return (ArrayList<Doctor>) doctors.clone();
     }

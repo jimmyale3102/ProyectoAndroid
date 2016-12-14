@@ -9,7 +9,8 @@ import java.util.Enumeration;
 import java.util.Properties;
 
 /**
- * Created by Jimmy on 09/12/2016.
+ * Clase encargada de manejar el elogin de la entrada de los usuarios
+ * Created by Jimmy and Sergio  on 06/12/2016.
  */
 
 public class ManagementUser implements Serializable{
@@ -18,12 +19,16 @@ public class ManagementUser implements Serializable{
     private Context context;
     private Properties properties;
 
+
     public ManagementUser(Context context) {
         this.context = context;
         this.properties = new Properties();
         loadUsers();
     }
 
+    /**
+     *Metodo para cargar los usuarios
+     */
     public void loadUsers() {
         try {
             properties.load(context.getResources().getAssets().open("users.properties"));
@@ -32,6 +37,12 @@ public class ManagementUser implements Serializable{
         }
     }
 
+    /**
+     *Metodo qeu valida los usuarios
+     * @param userName Nombre del Usuario, atributo de tipo String
+     * @param password clave de usuarion , atributo de tipo String
+     * @return tipo boolean
+     */
 
     public boolean validateUser(String userName, String password) {
         if (properties == null) return false;

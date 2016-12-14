@@ -8,7 +8,8 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
- * Created by Jimmy on 09/12/2016.
+ * Clase encargada de manejar todos Management del proyecto
+ * Created by Jimmy and Sergio  on 06/12/2016.
  */
 
 public class ManagementApp implements Serializable {
@@ -21,6 +22,11 @@ public class ManagementApp implements Serializable {
     private static ManagementPatient mgPatient;
     private static ManagementApp manaApp;
 
+    /**
+     *
+     * @param context
+     */
+
     public ManagementApp(Context context) {
         context = context;
         mgDoc = new ManagementDoctor();
@@ -30,6 +36,12 @@ public class ManagementApp implements Serializable {
         manaApp = this;
     }
 
+    /**Metodo para validar el usuario
+     *
+     * @param userName atributo usuario de tipo String
+     * @param password atributo password (clave de tipo String);
+     * @return tipo boolean
+     */
     public static boolean validateUser(String userName, String password) {
         if (mgUser.validateUser(userName, password)) {
 
@@ -38,11 +50,24 @@ public class ManagementApp implements Serializable {
         return false;
     }
 
-
+    /**
+     * Metodo para añadir una cita medica
+     *
+     * @param date fecha de la cita a asignar de tipo String.
+     * @param hour hora de la cita a asiganr de tipo  String
+     * @param idPatient id de el paciente para asignar la cita.
+     * @param tjDoctor tarjeta profecional de Doctor para asiganr la cita.
+     * @return tipo boolean
+     */
     public static boolean addAppointment(String date, String hour, String idPatient, String tjDoctor) {
         return mgAppointment.addAppointment(date, hour, idPatient, tjDoctor);
     }
 
+    /**
+     * Metodo que valida la existencia de un Doctor
+     * @param tjDoctor  id (tarjeta profecional) de Doctor tipo String.
+     * @return tipo boolean
+     */
     public static boolean validateDoctor(String tjDoctor) {
         if(mgDoc.findDoctor(tjDoctor) == -1){
             return true;
@@ -50,7 +75,15 @@ public class ManagementApp implements Serializable {
         return false;
     }
 
-
+    /**
+     * Metodo para añadir un paciente
+     * @param name nombre del Paciente de tipo String
+     * @param id id(C.cC) del paciete de tipo String
+     * @param age edad del paciente de tipo String
+     * @param gender genero del paciente de tipo String
+     * @param eps eps del paciente de tipo String
+     * @return tipo boolean
+     */
     public static boolean addPatient(String name, String id, short age, String gender, String eps) {
         if (mgPatient.addPatient(name, id, age, gender, eps)) {
             return true;
@@ -65,6 +98,11 @@ public class ManagementApp implements Serializable {
         return false;
     }
 
+    /**
+     *
+     * @param idPatient
+     * @return
+     */
     public static boolean findPatient(String idPatient) {
         if (mgPatient.findPatient(idPatient) == -1) {
             return true;
@@ -78,6 +116,12 @@ public class ManagementApp implements Serializable {
         }
         return null;
     }
+
+    /**
+     *
+     * @param idDoctor
+     * @return
+     */
 
     public static Doctor findDoctor(String idDoctor) {
         if (mgDoc.getDoctor(idDoctor) != null) {

@@ -4,7 +4,8 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
- * Created by Jimmy on 09/12/2016.
+ * Clase encargada de manejar los operaciones de order y añadir
+ * Created by Jimmy and Sergio  on 06/12/2016.
  */
 
 public class ManagementAppointment implements Serializable{
@@ -17,6 +18,14 @@ public class ManagementAppointment implements Serializable{
         appointments = new ArrayList<>();
     }
 
+    /**
+     *Metodo para añadir una cita medica
+     * @param date fecha de la cita asignada, atributo de tipo String
+     * @param hour hora de la cita asignada, atributo de tipo String
+     * @param idPat id(C.C) de le paciente, atributo de tipo String
+     * @param tjDoc (Tarjeta de profeción ), atributo de tipo String
+     * @return tipo boolean
+     */
     public boolean addAppointment(String date, String hour, String idPat, String tjDoc){
         Appointment appointment = new Appointment(date, hour, idPat, tjDoc);
         if(compareAppointment(appointment)){
@@ -26,6 +35,12 @@ public class ManagementAppointment implements Serializable{
             return true;
         }
     }
+
+    /** Metod que compara las citas que sea las mismas en la misca fecha y hora
+     *
+     * @param appointment Objeto de la clase Appointment
+     * @return tipo boolean
+     */
 
     public boolean compareAppointment(Appointment appointment){
 
@@ -44,6 +59,10 @@ public class ManagementAppointment implements Serializable{
         return false;
     }
 
+    /**
+     *
+     * @return
+     */
     public ArrayList<Appointment> getAppointments() {
         return (ArrayList<Appointment>) appointments.clone();
     }
