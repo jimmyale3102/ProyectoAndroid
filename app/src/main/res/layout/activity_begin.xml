@@ -79,15 +79,6 @@
                 android:background="@mipmap/image_buton_login"
                 android:scaleType="fitXY" />
 
-            <TextView
-                android:id="@+id/tvRegistrer"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Registrarse"
-                android:textAlignment="center"
-                android:textColor="@android:color/black"
-                android:textSize="20sp"
-                android:textStyle="normal|italic" />
         </LinearLayout>
 
     </LinearLayout>

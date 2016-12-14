@@ -52,7 +52,7 @@ public class Register_Appoinment extends AppCompatActivity {
                    if(ManagementApp.validateDoctor(tjDoc.getText().toString()) || ManagementApp.findPatient(idPat.getText().toString())) {
                        onAlertDialog2();
                    } else {
-                       if (ManagementApp.addAppointment(date, hour.toString(), idPat.getText().toString(), tjDoc.getText().toString())) {
+                       if (ManagementApp.addAppointment(date, hour.getSelectedItem().toString(), idPat.getText().toString(), tjDoc.getText().toString())) {
                            onAlertDialog();
                        } else {
                            onToastAdd();
@@ -73,7 +73,7 @@ public class Register_Appoinment extends AppCompatActivity {
         DatePickerDialog dialog = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker datePicker, int day, int month, int year) {
-                date = String.valueOf(day) + String.valueOf(month) + String.valueOf(year);
+                date = String.valueOf(day)+" ~ "+String.valueOf(month)+" ~ "+String.valueOf(year);
             }
         }, day, month, year);
         dialog.getDatePicker().setMinDate(c.getTime().getTime());

@@ -39,9 +39,7 @@ public class Register_DoctorAct extends AppCompatActivity {
 
                 docname = namedoc.getText().toString();
                 docid= iddoc.getText().toString();
-                espci = "";
-
-
+                espci = spinner2.getSelectedItem().toString();
                 if(ManagementApp.addDoctor(docname,docid,espci)){
                     onAlertDialog();
                 } else {

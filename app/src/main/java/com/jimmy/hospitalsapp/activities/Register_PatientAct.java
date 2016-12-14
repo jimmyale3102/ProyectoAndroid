@@ -59,7 +59,8 @@ public class Register_PatientAct extends AppCompatActivity implements View.OnCli
                         name = etNamePat.getText().toString();
                         id = etIdPat.getText().toString();
                         age = etAge.getText().toString();
-                        if (ManagementApp.addPatient(name, id, Short.parseShort(age), gender, eps.toString())) {
+                        eps = spnEps.getSelectedItem().toString();
+                        if (ManagementApp.addPatient(name, id, Short.parseShort(age), gender, eps)) {
                             onAlertDialog();
                         } else {
                             onToastAdd();
