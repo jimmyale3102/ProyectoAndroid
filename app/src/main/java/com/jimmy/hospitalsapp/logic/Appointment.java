@@ -1,11 +1,14 @@
 package com.jimmy.hospitalsapp.logic;
 
+import java.io.Serializable;
+
 /**
  * Created by Jimmy on 06/12/2016.
  */
 
-public class Appointment {
+public class Appointment implements Serializable{
 
+    private static final long serialVersionUID = 123L;
     private String date;
     private String hour;
     private String idPatient;
@@ -18,6 +21,10 @@ public class Appointment {
         this.tjDoctor = tjDoctor;
     }
 
+    /**
+     *
+     * @param date
+     */
     public void setDate(String date) {
         this.date = date;
     }

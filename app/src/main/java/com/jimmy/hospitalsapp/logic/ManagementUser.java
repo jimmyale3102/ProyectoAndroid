@@ -3,6 +3,7 @@ package com.jimmy.hospitalsapp.logic;
 import android.content.Context;
 
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.Properties;
@@ -11,8 +12,9 @@ import java.util.Properties;
  * Created by Jimmy on 09/12/2016.
  */
 
-public class ManagementUser {
+public class ManagementUser implements Serializable{
 
+    private static final long serialVersionUID = 123L;
     private Context context;
     private Properties properties;
 

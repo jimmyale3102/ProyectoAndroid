@@ -1,13 +1,15 @@
 package com.jimmy.hospitalsapp.logic;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  * Created by Jimmy on 09/12/2016.
  */
 
-public class ManagementDoctor {
+public class ManagementDoctor implements Serializable{
 
+    private static final long serialVersionUID = 123L;
     private ArrayList<Doctor> doctors;
 
     public ManagementDoctor() {
@@ -67,6 +69,24 @@ public class ManagementDoctor {
             }
         }
         return -1;
+    }
+
+    public Doctor getDoctor(String id) {
+        ArrayList<Doctor> doctorAux = sortIdDoctor();
+        short middle;
+        short begin = 0;
+        short finish = (short) (doctorAux.size() - 1);
+        while(begin <= finish) {
+            middle = (short) ((begin + finish) / 2);
+            if(doctorAux.get(middle).getId().equals(id)) {
+                return doctorAux.get(middle);
+            } else if (doctorAux.get(middle).getId().compareTo(id) > 0) {
+                finish = (short) (middle - 1);
+            } else {
+                begin = (short) (middle + 1);
+            }
+        }
+        return null;
     }
 
     public ArrayList<Doctor> getDoctors() {

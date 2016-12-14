@@ -12,14 +12,15 @@ import android.widget.Toast;
 
 import com.jimmy.hospitalsapp.R;
 import com.jimmy.hospitalsapp.logic.ManagementApp;
+import com.jimmy.hospitalsapp.serialization.SerializacionApp;
 
 public class BeginActivity extends AppCompatActivity {
 
     private EditText etUserName;
     private EditText etPassword;
     private ImageButton btnLogin;
-    private TextView tvRegistrer;
     private ManagementApp mgApp;
+    private int cont;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,29 +28,28 @@ public class BeginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_begin);
 
         mgApp = new ManagementApp(this);
-
+        cont = 1;
         etUserName = (EditText) findViewById(R.id.etUserName);
         etPassword = (EditText) findViewById(R.id.etPassword);
         btnLogin = (ImageButton) findViewById(R.id.btnLogin);
-        tvRegistrer = (TextView) findViewById(R.id.tvRegistrer);
-
-        tvRegistrer.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent registrer = new Intent(BeginActivity.this, Register_DoctorAct.class);
-                startActivity(registrer);
-            }
-        });
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (etUserName.getText().length() > 0 && etPassword.getText().length() > 0) {
+                    if (cont == 3) {
+                        finish();
+                    }
+                    if(cont == 2) {
+                        onToastError();
+                    }
                     if (ManagementApp.validateUser(etUserName.getText().toString(), etPassword.getText().toString())) {
+                        onToastBegin(etUserName.getText().toString());
                         Intent login = new Intent(BeginActivity.this, MenuActivity.class);
                         startActivity(login);
                     } else {
                         onAlertDialog();
+                        cont = cont+1;
                     }
                 } else {
                     onToast();
@@ -65,8 +65,18 @@ public class BeginActivity extends AppCompatActivity {
         alertDialog.show();
     }
 
+    public void onToastError() {
+        Toast toast = Toast.makeText(this, "Queda 1 intento o se cerrará la aplicación", Toast.LENGTH_SHORT);
+        toast.show();
+    }
+
     public void onToast() {
         Toast toast = Toast.makeText(this, "Hay campos vacios", Toast.LENGTH_SHORT);
+        toast.show();
+    }
+
+    public void onToastBegin(String nameUser) {
+        Toast toast = Toast.makeText(this, "Bienvenido "+nameUser, Toast.LENGTH_SHORT);
         toast.show();
     }
 

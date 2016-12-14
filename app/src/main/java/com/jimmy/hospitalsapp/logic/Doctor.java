@@ -1,11 +1,14 @@
 package com.jimmy.hospitalsapp.logic;
 
+import java.io.Serializable;
+
 /**
  * Created by Jimmy on 06/12/2016.
  */
 
-public class Doctor implements Comparable<Doctor>{
+public class Doctor implements Comparable<Doctor>, Serializable{
 
+    private static final long serialVersionUID = 123L;
     private String name;
     private String id;
     private String specialization;

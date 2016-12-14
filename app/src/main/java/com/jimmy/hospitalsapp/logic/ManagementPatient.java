@@ -1,16 +1,19 @@
 package com.jimmy.hospitalsapp.logic;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  * Created by Jimmy on 09/12/2016.
  */
 
-public class ManagementPatient {
+public class ManagementPatient implements Serializable{
 
+    private static final long serialVersionUID = 123L;
     private ArrayList<Patient> patients;
 
     public ManagementPatient() {
+
         patients = new ArrayList<>();
     }
 
@@ -66,6 +69,24 @@ public class ManagementPatient {
             }
         }
         return -1;
+    }
+
+    public Patient getPatient(String id) {
+        ArrayList<Patient> patientAux = sortIdPatient();
+        short middle;
+        short begin = 0;
+        short finish = (short) (patientAux.size() - 1);
+        while(begin <= finish) {
+            middle = (short) ((begin + finish) / 2);
+            if(patientAux.get(middle).getId().equals(id)) {
+                return patientAux.get(middle);
+            } else if (patientAux.get(middle).getId().compareTo(id) > 0) {
+                finish = (short) (middle - 1);
+            } else {
+                begin = (short) (middle + 1);
+            }
+        }
+        return null;
     }
 
     public ArrayList<Patient> getPatients() {

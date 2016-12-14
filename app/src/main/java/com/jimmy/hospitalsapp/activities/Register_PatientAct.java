@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.jimmy.hospitalsapp.R;
@@ -20,7 +21,7 @@ public class Register_PatientAct extends AppCompatActivity implements View.OnCli
     private EditText etNamePat;
     private EditText etIdPat;
     private EditText etAge;
-    private EditText etEps;
+    private Spinner spnEps;
     private RadioButton rdBtnMan;
     private RadioButton rdBtnWoman;
     private RadioButton rdBtnOther;
@@ -40,7 +41,7 @@ public class Register_PatientAct extends AppCompatActivity implements View.OnCli
         etNamePat = (EditText) findViewById(R.id.etNamePat);
         etIdPat = (EditText) findViewById(R.id.etIdPat);
         etAge = (EditText) findViewById(R.id.etAge);
-        etEps = (EditText) findViewById(R.id.etEps);
+        spnEps = (Spinner) findViewById(R.id.spnEps);
         rdBtnMan = (RadioButton) findViewById(R.id.rdBtnMan);
         rdBtnWoman = (RadioButton) findViewById(R.id.rdBtnWoman);
         rdBtnOther = (RadioButton) findViewById(R.id.rdBtnOther);
@@ -53,12 +54,12 @@ public class Register_PatientAct extends AppCompatActivity implements View.OnCli
         btnAddPatient.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (etNamePat.getText().length() > 0 && etIdPat.getText().length() > 0 && etAge.getText().length() > 0 && etEps.getText().length() > 0)
+                if (etNamePat.getText().length() > 0 && etIdPat.getText().length() > 0 && etAge.getText().length() > 0 && spnEps.toString().length() > 0)
                     if (gender.length() > 0) {
                         name = etNamePat.getText().toString();
                         id = etIdPat.getText().toString();
                         age = etAge.getText().toString();
-                        eps = etEps.getText().toString();
+                        eps = spnEps.getSelectedItem().toString();
                         if (ManagementApp.addPatient(name, id, Short.parseShort(age), gender, eps)) {
                             onAlertDialog();
                         } else {
