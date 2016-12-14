@@ -1,6 +1,7 @@
 package com.jimmy.hospitalsapp.activities;
 
-import android.content.Intent;
+import android.content.DialogInterface;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -30,7 +31,7 @@ public class Register_DoctorAct extends AppCompatActivity {
         setContentView(R.layout.activity_register__doctor);
 
         namedoc = (EditText) findViewById(R.id.namedoc);
-        iddoc = (EditText) findViewById(R.id.iddoc);
+        iddoc = (EditText) findViewById(R.id.idDoc);
         btnaddDoc = (Button)findViewById(R.id.btnaddDoc);
         spinner2 = (Spinner) findViewById(R.id.spinner2);
 
@@ -50,14 +51,16 @@ public class Register_DoctorAct extends AppCompatActivity {
                 docid= iddoc.getText().toString();
                 espci ="";
 
-                if(ManagementApp.addDoctor(docname,docid,espci)){
 
-                    Intent addDoct = new Intent(Register_DoctorAct.this, MenuActivity.class);
-                    startActivity(addDoct);
+                if(ManagementApp.addDoctor(docname,docid,espci)){
+                    onAlertDialog();
+                } else {
                     onToastAdd();
                 }
 
-            }else {onToast();}
+            }else {
+                onToast();
+            }
 
             }
         });
@@ -75,6 +78,19 @@ public class Register_DoctorAct extends AppCompatActivity {
         Toast.makeText(this, "Doctor Registrado", Toast.LENGTH_SHORT).show();
     }
 
+    public void onAlertDialog() {
+        AlertDialog alertDialog = new AlertDialog.Builder(this).create();
+        alertDialog.setTitle("¡Exito!");
+        alertDialog.setMessage("El doctor se registró correctamente");
+        alertDialog.setButton(DialogInterface.BUTTON_POSITIVE, "Aceptar", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+              // Log.d("","");
+                finish();
+            }
+        });
+        alertDialog.show();
+    }
 
 }
 

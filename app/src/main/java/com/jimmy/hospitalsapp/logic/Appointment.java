@@ -8,14 +8,14 @@ public class Appointment {
 
     private String date;
     private String hour;
-    private Patient idPatient;
-    private Doctor idDoctor;
+    private String idPatient;
+    private String tjDoctor;
 
-    public Appointment(String date, String hour, Patient idPatient, Doctor idDoctor) {
+    public Appointment(String date, String hour, String idPatient, String tjDoctor) {
         this.date = date;
         this.hour = hour;
         this.idPatient = idPatient;
-        this.idDoctor = idDoctor;
+        this.tjDoctor = tjDoctor;
     }
 
     public void setDate(String date) {
@@ -26,12 +26,13 @@ public class Appointment {
         this.hour = hour;
     }
 
-    public void setIdPatient(Patient idPatient) {
+    public void setIdPatient(String idPatient) {
+
         this.idPatient = idPatient;
     }
 
-    public void setIdDoctor(Doctor idDoctor) {
-        this.idDoctor = idDoctor;
+    public void setTjDoctor(Doctor idDoctor) {
+        this.tjDoctor = tjDoctor;
     }
 
     public String getDate() {
@@ -42,11 +43,11 @@ public class Appointment {
         return hour;
     }
 
-    public Patient getIdPatient() {
+    public String getIdPatient() {
         return idPatient;
     }
 
-    public Doctor getIdDoctor() {
-        return idDoctor;
+    public String getTjDoctor() {
+        return tjDoctor;
     }
 }

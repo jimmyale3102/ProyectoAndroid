@@ -12,15 +12,15 @@
     tools:context="com.jimmy.hospitalsapp.activities.Register_Appoinment">
 
     <EditText
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:inputType="textPersonName"
         android:text=""
-        android:hint="ID de Doctor"
+        android:hint="N° Tarjeta de doctor"
         android:ems="10"
-        android:id="@+id/idPati"
-        android:layout_marginBottom="35dp"
-        android:layout_above="@+id/btnaddApp"
+        android:id="@+id/tjDoc"
+        android:layout_marginBottom="43dp"
+        android:layout_alignBottom="@+id/idPat"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -30,31 +30,48 @@
         android:inputType="textPersonName"
         android:hint="ID de Paciente"
         android:ems="10"
-        android:id="@+id/iddoc"
-        android:layout_above="@+id/idPati"
+        android:id="@+id/idPat"
+        android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
+        android:layout_marginTop="88dp" />
 
-        android:layout_marginBottom="12dp" />
+    <TextView
+        android:text="Hora"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/spHour"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/tvHour" />
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/spHour"
+        android:entries="@array/SpinnerHour"
+        android:spinnerMode="dialog"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toLeftOf="@+id/btnDate"
+        android:layout_toStartOf="@+id/btnDate" />
+
+    <Button
+        android:text="Fecha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="62dp"
+        android:id="@+id/btnDate"
+        android:layout_above="@+id/btnAddAppointment"
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:text="Agregar"
         android:layout_width="120dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="37dp"
-        android:id="@+id/btnaddApp"
+        android:id="@+id/btnAddAppointment"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
-
-    <CalendarView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/calendarView4"
-        android:layout_above="@+id/iddoc"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="11dp"
-        android:layout_alignRight="@+id/btnaddApp"
-        android:layout_alignEnd="@+id/btnaddApp" />
 
 </RelativeLayout>
